@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  width: 320px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+
+  color: white;
+}
+
+.container {
+  padding: 20px;
+}
+
+h2 {
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  color: #b8b8b8;
+
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: white;
+
+  background: linear-gradient(135deg, #c99a2e, #f0c35a);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 24px rgba(246, 128, 6, 0.35);
+
+  filter: brightness(1.05);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.footer {
+  margin-top: 14px;
+
+  text-align: center;
+
+  color: #8a8a8a;
+
+  font-size: 12px;
+}
+
+#status {
+  margin-top: 12px;
+
+  text-align: center;
+
+  font-size: 13px;
+
+  min-height: 18px;
+
+  color: #d6d6d6;
+}
+
+.error {
+  color: #ff5f56;
+}
+
+.success {
+  color: #22c55e;
+}
