@@ -83,10 +83,22 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 
   const postCodeMatch = postUrl.match(/\/p\/([^\/]+)/);
 
+  const now = new Date();
+  const timestamp =
+    String(now.getDate()).padStart(2, "0") +
+    "-" +
+    String(now.getMonth() + 1).padStart(2, "0") +
+    "-" +
+    now.getFullYear() +
+    "_" +
+    String(now.getHours()).padStart(2, "0") +
+    "-" +
+    String(now.getMinutes()).padStart(2, "0");
+
   const exportData = {
     postUrl,
     postCode: postCodeMatch ? postCodeMatch[1] : null,
-    exportedAt: new Date().toISOString(),
+    timestamp: timestamp,
     commentCount: comments.length,
     extensionVersion: chrome.runtime.getManifest().version,
     comments,
@@ -101,7 +113,10 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   const a = document.createElement("a");
 
   a.href = url;
-  a.download = "comments.json";
+
+  const postCode = exportData.postCode || "unknown";
+
+  a.download = `${postCode}_${timestamp}.json`;
 
   document.body.appendChild(a);
 
